@@ -7,16 +7,18 @@ public class EmployeeWage {
         final int FULL_DAY_HOUR = 8;
         int workingHours = 0;
         int attendance = (int) (Math.random() * 3);
-        if (attendance == IS_PRESENT) {
-            System.out.println("Employee is Present");
-            workingHours = 8;
-        }
-        else if (attendance == PART_TIME) {
-            System.out.println("Employee is Present Part Time");
-            workingHours = 4;
-        }
-        else {
-            System.out.println("Employee is Absent");
+        switch (attendance)
+        {
+            case IS_PRESENT:
+                System.out.println("Employee is Present Full Time ");
+                workingHours = 8;
+                break;
+            case PART_TIME:
+                System.out.println("Employee is Present Part Time");
+                workingHours = 4;
+                break;
+            default:
+                System.out.println("Employee is Absent");
         }
         int dailyWage = WAGE_PER_HOUR * workingHours;
         System.out.println("Daily Employee Wage : " + dailyWage);
